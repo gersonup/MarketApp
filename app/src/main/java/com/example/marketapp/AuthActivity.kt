@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
+import com.google.firebase.auth.FirebaseAuth
 
 class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,19 +24,42 @@ class AuthActivity : AppCompatActivity() {
         title = "Authenticate"
 
         findViewById<Button>(R.id.sign_in_btn).setOnClickListener {
-            val emailEditText = findViewById<EditText>(R.id.sign_up_email_edt)
-            val passwordEditText = findViewById<EditText>(R.id.signup_password_first_edt)
-            if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()) {
-
+            val signInEmailEdt = findViewById<EditText>(R.id.sign_up_email_edt)
+            val signInPasswordEdt = findViewById<EditText>(R.id.signup_password_first_edt)
+            if (signInEmailEdt.text.isNotEmpty() && signInPasswordEdt.text.isNotEmpty()) {
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(
+                    signInEmailEdt.text.toString(),
+                    signInPasswordEdt.text.toString()
+                ).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        showHome(it.result.user?.email ?:"", ProviderType.BASIC)
+                    } else {
+                        showAlert()
+                    }
+                }
             }
-
-            val intent = Intent(this, SignupActivity::class.java)
-            startActivity(intent)
         }
 
         findViewById<Button>(R.id.sing_up_btn).setOnClickListener {
-            val intent = Intent(this, Articulos::class.java)
+            val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    private  fun showAlert() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("Se ha producido un error autenticando al usuario.")
+        builder.setPositiveButton("Ok", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+    private fun showHome(email: String, provider: ProviderType) {
+        val homeIntent = Intent(this, Articulos::class.java).apply {
+            putExtra( "email",email)
+            putExtra("provider", provider.name)
+        }
+        startActivity(homeIntent)
     }
 }
