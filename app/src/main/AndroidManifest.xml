@@ -15,10 +15,10 @@
             android:name=".Articulos"
             android:exported="false" />
         <activity
-            android:name=".registro"
+            android:name=".SignupActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".AuthActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>

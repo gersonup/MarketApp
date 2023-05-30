@@ -4,24 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".registro">
+    tools:context=".SignupActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/fondo_prueba_1"
-        tools:context=".MainActivity">
+        tools:context=".AuthActivity">
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/signup_password_second_edt"
+            android:importantForAutofill="no"
             android:layout_width="331dp"
             android:layout_height="50dp"
             android:background="@drawable/txt_blanco"
             android:ems="10"
             android:gravity="center"
-            android:hint="Contraseña:"
+            android:hint="@string/confirm_password"
             android:inputType="textPersonName"
-            android:text="Confirma tu clave"
             android:textColor="#B3B1B1"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -31,11 +31,11 @@
             app:layout_constraintVertical_bias="0.631" />
 
         <Button
-            android:id="@+id/btnYaTengo"
+            android:id="@+id/i_already_have_account_btn"
             android:layout_width="331dp"
             android:layout_height="50dp"
             android:background="@drawable/txt_blanco"
-            android:text="Ya tengo cuenta"
+            android:text="@string/i_already_have_an_account"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,15 +44,15 @@
             app:layout_constraintVertical_bias="0.955" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/sign_in_password_edt"
+            android:importantForAutofill="no"
             android:layout_width="331dp"
             android:layout_height="50dp"
             android:background="@drawable/txt_blanco"
             android:ems="10"
             android:gravity="center"
-            android:hint="Contraseña:"
+            android:hint="@string/enter_password"
             android:inputType="textPersonName"
-            android:text="Registra tu clave"
             android:textColor="#B3B1B1"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -86,14 +86,15 @@
             app:srcCompat="@drawable/logo" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/signInEmailEdt"
+            android:importantForAutofill="no"
             android:layout_width="331dp"
             android:layout_height="50dp"
             android:background="@drawable/txt_blanco"
             android:ems="10"
             android:gravity="center"
             android:inputType="textPersonName"
-            android:text="Nombre de Usuario"
+            android:hint="@string/enter_email"
             android:textColor="#B3B1B1"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -103,11 +104,11 @@
             app:layout_constraintVertical_bias="0.454" />
 
         <Button
-            android:id="@+id/btnRegistro2"
+            android:id="@+id/signupBtn"
             android:layout_width="331dp"
             android:layout_height="50dp"
             android:background="@drawable/txt_blanco"
-            android:text="Registrar"
+            android:text="@string/signup"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

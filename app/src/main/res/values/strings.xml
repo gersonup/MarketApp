@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MarketApp</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="signup">Sign Up</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="i_already_have_an_account">I already have an account.</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="forgot_password">Do you have forgot you password?</string>
+    <string name="article_description">Article Description</string>
 </resources>
