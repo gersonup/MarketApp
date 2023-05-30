@@ -6,10 +6,10 @@ import android.os.Bundle
 enum class ProviderType {
     BASIC
 }
-class Articulos : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_articulos)
+        setContentView(R.layout.activity_home)
 
     }
 }
