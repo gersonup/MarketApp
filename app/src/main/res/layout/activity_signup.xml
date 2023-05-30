@@ -44,7 +44,7 @@
             app:layout_constraintVertical_bias="0.955" />
 
         <EditText
-            android:id="@+id/signup_password_first_edt"
+            android:id="@+id/sign_in_password_edt"
             android:importantForAutofill="no"
             android:layout_width="331dp"
             android:layout_height="50dp"
@@ -86,7 +86,7 @@
             app:srcCompat="@drawable/logo" />
 
         <EditText
-            android:id="@+id/sign_up_email_edt"
+            android:id="@+id/signInEmailEdt"
             android:importantForAutofill="no"
             android:layout_width="331dp"
             android:layout_height="50dp"

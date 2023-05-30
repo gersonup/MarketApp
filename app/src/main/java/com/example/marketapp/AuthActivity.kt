@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 
@@ -24,8 +25,8 @@ class AuthActivity : AppCompatActivity() {
         title = "Authenticate"
 
         findViewById<Button>(R.id.sign_in_btn).setOnClickListener {
-            val signInEmailEdt = findViewById<EditText>(R.id.sign_up_email_edt)
-            val signInPasswordEdt = findViewById<EditText>(R.id.signup_password_first_edt)
+            val signInEmailEdt = findViewById<EditText>(R.id.signInEmailEdt)
+            val signInPasswordEdt = findViewById<EditText>(R.id.sign_in_password_edt)
             if (signInEmailEdt.text.isNotEmpty() && signInPasswordEdt.text.isNotEmpty()) {
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(
                     signInEmailEdt.text.toString(),
@@ -37,6 +38,8 @@ class AuthActivity : AppCompatActivity() {
                         showAlert()
                     }
                 }
+            } else {
+                Toast.makeText(this, "Empty field not allowed!", Toast.LENGTH_SHORT).show()
             }
         }
 
