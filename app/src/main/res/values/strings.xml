@@ -8,4 +8,6 @@
     <string name="sign_in">Sign In</string>
     <string name="forgot_password">Do you have forgot you password?</string>
     <string name="article_description">Article Description</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
